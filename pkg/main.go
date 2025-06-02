@@ -11,11 +11,13 @@ import (
 func main() {
 	app := plugin.NewApp()
 
-	err := backend.Serve(backend.ServeOpts{
+	opts := backend.ServeOpts{
+		CheckHealthHandler:  app,
 		CallResourceHandler: app,
-	})
-	if err != nil {
-		log.DefaultLogger.Error("Failed to start backend server", "error", err)
+	}
+
+	if err := backend.Serve(opts); err != nil {
+		log.DefaultLogger.Error(err.Error())
 		os.Exit(1)
 	}
 }
