@@ -1,0 +1,26 @@
+{
+  "name": "apafana-simple-app",
+  "version": "1.0.0",
+  "description": "App Plugin Template",
+  "scripts": {
+    "build": "grafana-toolkit plugin:build",
+    "test": "grafana-toolkit plugin:test",
+    "dev": "grafana-toolkit plugin:dev",
+    "watch": "grafana-toolkit plugin:dev --watch",
+    "sign": "grafana-toolkit plugin:sign",
+    "start": "yarn watch"
+  },
+  "author": "Ngo Quang Thien",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@grafana/toolkit": "latest"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "dependencies": {
+    "@grafana/data": "^8.4.2",
+    "@grafana/runtime": "^8.4.1",
+    "@grafana/ui": "^8.4.1"
+  }
+}

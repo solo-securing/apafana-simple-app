@@ -1,0 +1,69 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "app",
+  "name": "Apafana Simple App",
+  "id": "apafana-simple-app",
+  "backend": true,
+  "executable": "gpx_apafana_simple_app",
+  "info": {
+    "description": "App Plugin Template",
+    "author": {
+      "name": "Ngo Quang Thien"
+    },
+    "keywords": ["app"],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      { "name": "Website", "url": "https://github.com/grafana/grafana-starter-app" },
+      { "name": "License", "url": "https://github.com/grafana/grafana-starter-app/blob/master/LICENSE" }
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+
+  "includes": [
+    {
+      "type": "page",
+      "name": "Root Page (react)",
+      "path": "/a/apafana-simple-app",
+      "role": "Viewer",
+      "addToNav": true,
+      "defaultNav": true
+    },
+    {
+      "type": "page",
+      "name": "Root Page (Tab B)",
+      "path": "/a/apafana-simple-app/?tab=b",
+      "role": "Viewer",
+      "addToNav": true,
+      "defaultNav": false
+    },
+    {
+      "type": "page",
+      "name": "React Config",
+      "path": "/plugins/apafana-simple-app/?page=page2",
+      "role": "Admin",
+      "addToNav": true,
+      "defaultNav": false
+    },
+    {
+      "type": "dashboard",
+      "name": "Streaming Example",
+      "path": "dashboards/streaming.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Lots of Stats",
+      "path": "dashboards/stats.json"
+    }
+  ],
+
+  "dependencies": {
+    "grafanaDependency": ">=7.0.0",
+    "grafanaVersion": "7.0.0",
+    "plugins": []
+  }
+}
