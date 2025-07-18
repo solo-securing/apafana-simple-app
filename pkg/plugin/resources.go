@@ -8,7 +8,7 @@ import (
 // handlePing is an example HTTP GET resource that returns a {"message": "ok"} JSON response.
 func (a *App) handlePing(w http.ResponseWriter, req *http.Request) {
 	w.Header().Add("Content-Type", "application/json")
-	if _, err := w.Write([]byte(`{"message": "ok"}`)); err != nil {
+	if _, err := w.Write([]byte(`{"message": "ok1"}`)); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}

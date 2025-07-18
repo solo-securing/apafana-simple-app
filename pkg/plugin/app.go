@@ -25,7 +25,7 @@ type App struct {
 }
 
 // NewApp creates a new example *App instance.
-func NewApp() *App {
+func NewApp(_ context.Context, _ backend.AppInstanceSettings) (instancemgmt.Instance, error) {
 	var app App
 
 	// Use a httpadapter (provided by the SDK) for resource calls. This allows us
@@ -35,7 +35,7 @@ func NewApp() *App {
 	app.registerRoutes(mux)
 	app.CallResourceHandler = httpadapter.New(mux)
 
-	return &app
+	return &app, nil
 }
 
 // Dispose here tells plugin SDK that plugin wants to clean up resources when a new instance
